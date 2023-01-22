@@ -3,6 +3,7 @@ const router = express.Router();
 
 // const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
 const {signup} = require("../controllers/user");
+const {userSignupValidator} = require('../validator/index');
 // const { userById, read, update, purchaseHistory } = require('../controllers/user');
 
 // router.get('/secret', requireSignin, (req, res) => {
@@ -12,7 +13,7 @@ const {signup} = require("../controllers/user");
 //     });
 // });
 
-router.post("/signup", signup);
+router.post("/signup", userSignupValidator, signup);
 
 
 

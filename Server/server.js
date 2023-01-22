@@ -23,11 +23,12 @@ mongoose
     .then(() => console.log('DB Connected'));
 
 // middlewares
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
-// app.use(expressValidator());
-app.use(cors());
+app.use(expressValidator());
+
 
 // routes middleware
 app.use(userRoutes);
