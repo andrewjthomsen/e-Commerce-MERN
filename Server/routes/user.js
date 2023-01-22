@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // const { requireSignin, isAuth, isAdmin } = require('../controllers/auth');
-//
+const {signup} = require("../controllers/user");
 // const { userById, read, update, purchaseHistory } = require('../controllers/user');
 
 // router.get('/secret', requireSignin, (req, res) => {
@@ -11,8 +11,8 @@ const router = express.Router();
 //         user: 'got here yay'
 //     });
 // });
-const {sayHi} = require("../controllers/user");
-router.get("/", sayHi);
+
+router.post("/signup", signup);
 
 
 
