@@ -17,17 +17,21 @@
   },
   "homepage": "https://github.com/andrewjthomsen/e-Commerce-MERN#readme",
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "cookie-parser": "^1.4.6",
+    "body-parser": "^1.19.0",
+    "braintree": "^2.16.0",
+    "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "express-validator": "^5.3.1",
+    "formidable": "^1.2.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.8.4",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.20",
-    "uuid": "^9.0.0"
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.5",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.0",
+    "uuid": "^3.3.2"
   }
 }
