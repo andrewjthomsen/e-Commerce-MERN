@@ -1,5 +1,6 @@
 const User = require('../models/user');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
+const expressJwt = require('express-jwt');
 const {errorHandler} = require('../helpers/dbErrorHandler');
 
 exports.signup = (req, res) => {
@@ -48,12 +49,10 @@ exports.signin = (req, res) => {
 
 exports.signout = (req, res) => {
     res.clearCookie('t');
-    res.json({message: 'Signout success'});
-}
+    res.json({ message: 'User Successfully Signed Out' });
+};
 
-// Require signin Middleware -- fixes issue with newer version of express-jwt, which requires algorithms
-// exports.requireSignin = expressJwt({
-//     secret: process.env.JWT_SECRET,
-//     algorithms: ["HS256"], // added later
-//     userProperty: "auth",
-// });
+exports.requireSignin = expressJwt({
+    secret: process.env.JWT_SECRET,
+    // algorithms: ["HS256"],
+    userProperty: "auth",});
