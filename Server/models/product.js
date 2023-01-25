@@ -1,11 +1,21 @@
 const mongoose = require('mongoose');
-const crypto = require('crypto');
-const { v1: uuidv1 } = require('uuid');
+const { objectId} = mongoose.Schema
 
 const productSchema = new mongoose.Schema(
     {
         name: {
             type: String,
+            trim: true,
+            required: true,
+            maxlength: 32
+        },
+        description: {
+            type: String,
+            required: true,
+            maxlength: 3200
+        },
+        price: {
+            type: Number,
             trim: true,
             required: true,
             maxlength: 32
