@@ -1,5 +1,5 @@
 const User = require('../models/user');
-// const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const expressJwt = require('express-jwt');
 const {errorHandler} = require('../helpers/dbErrorHandler');
 
@@ -33,7 +33,7 @@ exports.signin = (req, res) => {
         // if user is found make sure the email and password match
         // create authenticate method in user model
         if (!user.authenticate(password)) {
-            return status(401).json({
+            return res.status(401).json({
                 error: "Email and password do not match"
             })
         }
@@ -54,5 +54,5 @@ exports.signout = (req, res) => {
 
 exports.requireSignin = expressJwt({
     secret: process.env.JWT_SECRET,
-    // algorithms: ["HS256"],
+    algorithms: ["HS256"],
     userProperty: "auth",});
