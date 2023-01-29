@@ -10,7 +10,7 @@ require('dotenv').config();
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
 const categoryRoutes = require('./routes/category');
-const menuRoutes = require('./routes/menu');
+// const menuRoutes = require('./routes/menu');
 
 // app
 const app = express();
@@ -35,7 +35,7 @@ app.use(expressValidator());
 app.use('/api', userRoutes);
 app.use('/api', authRoutes);
 app.use('/api', categoryRoutes);
-app.use('/api', menuRoutes);
+// app.use('/api', menuRoutes);
 
 
 const port = process.env.PORT || 8000;
