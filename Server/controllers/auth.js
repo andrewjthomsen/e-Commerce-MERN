@@ -56,13 +56,13 @@ exports.signout = (req, res) => {
     res.json({ message: 'Signout success' });
 };
 
-exports.requireSignin = expressJwt({
-    secret: process.env.JWT_SECRET,
-    userProperty: 'auth'
 // exports.requireSignin = expressJwt({
 //     secret: process.env.JWT_SECRET,
-//     algorithms: ["HS256"], // added later
-//     userProperty: "auth",
+//     userProperty: 'auth'
+exports.requireSignin = expressJwt({
+    secret: process.env.JWT_SECRET,
+    algorithms: ["HS256"], // added later
+    userProperty: "auth",
 
 });
 
@@ -79,7 +79,7 @@ exports.isAuth = (req, res, next) => {
 exports.isAdmin = (req, res, next) => {
     if (req.profile.role === 0) {
         return res.status(403).json({
-            error: 'Admin resourse! Access denied'
+            error: 'Trying to access Admin resourse! Access denied'
         });
     }
     next();
