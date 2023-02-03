@@ -1,7 +1,7 @@
 const User = require('../models/user');
-const jwt = require('jsonwebtoken');
-const expressJwt = require('express-jwt');
-const {errorHandler} = require('../helpers/dbErrorHandler');
+// const jwt = require('jsonwebtoken');
+// const expressJwt = require('express-jwt');
+// const {errorHandler} = require('../helpers/dbErrorHandler');
 
 //Middleware
 exports.userById = (req, res,next, id) => {
@@ -11,7 +11,7 @@ exports.userById = (req, res,next, id) => {
                 error: 'User not found!'
             });
         }
-        req.profile = user
+        req.profile = user;
         next();
     });
 };

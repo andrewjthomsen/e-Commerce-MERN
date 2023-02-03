@@ -11,6 +11,6 @@ router.post("/category/create/:userId", requireSignin, isAdmin, isAdmin, create)
 
 
 // router.param('categoryId', categoryById);
-// router.param("userId", userById);
+router.param("userId", userById);
 
 module.exports = router;
